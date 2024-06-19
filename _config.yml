@@ -1,0 +1,146 @@
+#
+# Welcome to LYDDE Group Website system
+# Version : 1.0.0
+#
+# This site is a bootstrap 5.3 theme for Jekyll engine
+# This config file is meant for settings that affect your whole site, values
+# which you are expected to set up once and rarely edit after that.
+# Others settings are in /_settings/
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+
+#
+# Theme
+#
+# Theme can be used from GEM Package or from GitHub Repos
+# Default and recommanded usage is to rely on GitHub, to get latest version, even unpublished on GEM
+# If you rely on GEM, uncomment theme and comment remote_theme
+#
+# theme: jekyll-theme-lydde
+remote_theme: lydde/jekyll-lydde-theme
+
+#
+# Localization
+#
+# These are used to assist search engine and browser exposing the right language to user.
+# If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
+# otherwise, the layout language will use the default value of 'en'.
+#
+language: en # The language of the webpage
+locale: en_US # The language of the webpage
+timezone: Europe/Paris # Your website timezone
+
+#
+# Hosting
+#
+url: "" # the base hostname & protocol for your site, e.g. https://example.com
+baseurl: "/jekyll-lydde-starter" # the subpath of your site, e.g. /blog
+permalink: /news/:categories/:title # the subpath of your posts, e.g. /news
+
+# 
+# Site
+# 
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+#
+title: Your awesome title # Your website title (must be less than 50 char for SEO)
+tagline: a Great pushline # Used in Title (should be limited to 50 char for SEO)
+description: >- # used by SEO meta description and in feed.xml
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+
+#
+# Authors
+#
+authors:
+  default: 
+  # Change to your Company name (or keep as is)
+  # It will be displayed as the default author of the posts and the copyright owner in the Footer
+    name: LYDDE Group
+  # Change to your contact email address
+  # It will be used for email link
+    email: contact@lydde.com
+  # Change to your website
+  # It will be used in posts
+    site: https://lydde.com
+
+#
+# Brand
+#
+# These are used to marketize your brand. If you look in the HTML files,
+# you will see them in the header and the NavMenu.
+#
+logo: "/assets/logo.png" # if not set, default theme logo will be applied
+favicon: "assets/icons/favicon.ico" # if not set, default theme icon will be applied
+
+#
+# SEO & Analytics
+#
+# These are used to manage SEO for your websites
+settings:
+  webmaster:
+    analytics:
+      google: XXXX
+  theme:
+    color:
+      primary: "#6f42c1"
+      secondary: "#000000"
+      background: "#000000"
+      text: "#111"
+#
+# Defaults values
+#
+defaults:
+# all posts
+  - scope:
+      path: "_posts" # An empty string here means all files in the project
+      type: posts
+    values:
+      layout: post
+      image: /assets/images/post.jpeg
+      author: default
+# all pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+      image: /assets/images/page.jpeg
+      
+#
+# Plugins
+#
+plugins:
+  - jekyll-relative-links   #https://github.com/benbalter/jekyll-relative-links
+  - jekyll-github-metadata  #https://github.com/jekyll/github-metadata
+  - jekyll-redirect-from    #https://github.com/jekyll/jekyll-redirect-from
+  - jekyll-remote-theme     #https://github.com/benbalter/jekyll-remote-theme
+
+#
+# Plugin settings
+#
+relative_links:
+  enabled:     true
+  collections: true
+
+#
+# Files excluded
+#
+exclude:
+  - readme.md
+  - LICENSE
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - "*.gem"
+  - "*.gemspec"
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
